@@ -1,0 +1,95 @@
+<div class="register-page">
+
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <div class="row justify-content-center align-items-center min-vh-100">
+
+      <div class="col-lg-5 col-md-7">
+
+        <div class="register-card">
+
+          <div class="text-center mb-4">
+
+            <div class="logo-circle">
+              <i class="bi bi-person-plus-fill"></i>
+            </div>
+
+            <h2 class="mt-3 text-white fw-bold">
+              Create Account
+            </h2>
+
+            <p class="text-light">
+              Join Solar E-Commerce
+            </p>
+
+          </div>
+
+          <form [formGroup]="registerForm">
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill"></i>
+              </span>
+
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                formControlName="username">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">
+                <i class="bi bi-envelope-fill"></i>
+              </span>
+
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                formControlName="email">
+            </div>
+
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i class="bi bi-lock-fill"></i>
+              </span>
+
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                formControlName="password">
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-register w-100"
+              (click)="register()">
+
+              <i class="bi bi-person-check-fill me-2"></i>
+              Register
+
+            </button>
+
+          </form>
+
+          <div class="text-center mt-4">
+
+            <a routerLink="/login" class="login-link">
+              Already have an account? Login
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,65 @@
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white">
+
+          <h4>Add Product</h4>
+
+        </div>
+
+        <div class="card-body">
+
+          <form [formGroup]="productForm">
+
+            <input
+              class="form-control mb-3"
+              placeholder="Product Name"
+              formControlName="name">
+
+            <textarea
+              class="form-control mb-3"
+              rows="3"
+              placeholder="Description"
+              formControlName="description">
+            </textarea>
+
+            <input
+              class="form-control mb-3"
+              placeholder="Price"
+              formControlName="price">
+
+            <input
+              class="form-control mb-3"
+              placeholder="Stock"
+              formControlName="stock">
+
+            <input
+              type="file"
+              class="form-control mb-3"
+              (change)="onFileSelected($event)">
+
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="save()">
+
+              Save Product
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

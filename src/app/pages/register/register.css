@@ -1,0 +1,65 @@
+.register-page {
+  min-height: 100vh;
+  background:
+    url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d')
+    center/cover no-repeat;
+  position: relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.register-card{
+  position:relative;
+  z-index:2;
+
+  padding:40px;
+
+  border-radius:25px;
+
+  backdrop-filter:blur(18px);
+
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  box-shadow:0 10px 35px rgba(0,0,0,.4);
+}
+
+.logo-circle{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:35px;
+  color:white;
+
+  background:linear-gradient(135deg,#198754,#20c997);
+}
+
+.btn-register{
+  height:55px;
+
+  border:none;
+
+  color:white;
+
+  border-radius:12px;
+
+  font-size:18px;
+
+  background:linear-gradient(135deg,#198754,#20c997);
+}
+
+.btn-register:hover{
+  transform:translateY(-2px);
+}

@@ -1,0 +1,93 @@
+<nav
+  *ngIf="showNavbar"
+  class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+
+  <div class="container">
+
+    <a class="navbar-brand">
+  ⚡ SolarHub
+</a>
+
+    <div class="ms-auto d-flex align-items-center">
+
+      <a
+        routerLink="/products"
+        class="btn btn-outline-light me-2">
+
+        Products
+
+      </a>
+
+      <a
+        routerLink="/add-product"
+        class="btn btn-warning me-2">
+
+        Add Product
+
+      </a>
+
+      <button
+        class="btn btn-danger"
+        (click)="logout()">
+
+        Logout
+
+      </button>
+
+    </div>
+<!-- <a
+ routerLink="/cart"
+ class="btn btn-outline-light position-relative me-2">
+
+ 🛒 Cart
+
+ <span
+  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+   {{cartCount}}
+
+ </span>
+
+</a> -->
+<!-- <a
+ routerLink="/cart"
+ class="btn btn-outline-success me-2">
+
+ Cart ({{cartCount}})
+
+</a> -->
+
+<a
+ routerLink="/wishlist"
+ class="nav-link">
+
+ ❤️ Wishlist
+
+ <span class="badge rounded-pill bg-danger">
+  {{wishlistService.count()}}
+</span>
+
+</a>
+<a
+ routerLink="/cart"
+ class="nav-link">
+
+ 🛒 Cart
+<span class="badge rounded-pill bg-warning text-dark">
+  {{cartService.getCount()}}
+</span>
+
+</a>
+<li class="nav-item">
+  <a
+    class="nav-link"
+    routerLink="/orders">
+
+    <i class="bi bi-bag-check-fill me-1"></i>
+    Orders
+
+  </a>
+</li>
+  </div>
+
+</nav>

@@ -1,0 +1,205 @@
+<div class="container py-5">
+
+  <div class="text-center mb-5">
+
+    <h2 class="fw-bold text-primary">
+
+      My Orders
+
+    </h2>
+
+    <p class="text-muted">
+
+      Track all your placed orders
+
+    </p>
+
+  </div>
+
+  <div
+    class="card shadow-lg border-0 mb-4 order-card"
+    *ngFor="let order of orders">
+
+    <div
+      class="card-header bg-dark text-white">
+
+      <div
+        class="d-flex justify-content-between align-items-center">
+
+        <div>
+
+          <h5 class="mb-0">
+
+            Order #{{order.orderId}}
+
+          </h5>
+
+          <small>
+
+            {{order.orderDate | date:'medium'}}
+
+          </small>
+
+        </div>
+
+        <span
+          class="badge bg-success px-3 py-2">
+
+          {{order.orderStatus}}
+
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="card-body">
+
+      <div class="row mb-4">
+
+        <div class="col-md-6">
+
+          <h6 class="fw-bold text-primary">
+
+            Customer Details
+
+          </h6>
+
+          <p>
+
+            <strong>Name :</strong>
+            {{order.fullName}}
+
+          </p>
+
+          <p>
+
+            <strong>Mobile :</strong>
+            {{order.mobile}}
+
+          </p>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <h6 class="fw-bold text-primary">
+
+            Delivery Address
+
+          </h6>
+
+          <p>
+
+            {{order.address}}
+
+          </p>
+
+          <p>
+
+            {{order.city}},
+            {{order.state}}
+
+          </p>
+
+          <p>
+
+            {{order.pincode}}
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <h5 class="mb-3">
+
+        Ordered Products
+
+      </h5>
+
+      <div class="table-responsive">
+
+        <table
+          class="table table-hover">
+
+          <thead class="table-light">
+
+            <tr>
+
+              <th>
+                Product
+              </th>
+
+              <th>
+                Price
+              </th>
+
+              <th>
+                Qty
+              </th>
+
+              <th>
+                Total
+              </th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr
+              *ngFor="
+              let item of order.orderItems">
+
+              <td>
+
+                {{item.productName}}
+
+              </td>
+
+              <td>
+
+                ₹ {{item.price}}
+
+              </td>
+
+              <td>
+
+                {{item.quantity}}
+
+              </td>
+
+              <td>
+
+                ₹
+                {{item.price * item.quantity}}
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div
+        class="text-end mt-3">
+
+        <h4 class="text-success">
+
+          Grand Total :
+          ₹ {{order.totalAmount}}
+
+        </h4>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

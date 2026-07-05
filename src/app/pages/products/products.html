@@ -1,0 +1,110 @@
+<div class="container py-5">
+
+  <div class="d-flex justify-content-between mb-4">
+
+    <h2 class="fw-bold">
+      Solar Products
+    </h2>
+
+    <button
+      class="btn btn-primary"
+      routerLink="/add-product">
+
+      Add Product
+
+    </button>
+
+  </div>
+<div class="row mb-4">
+
+  <div class="col-md-6">
+
+    <input
+      class="form-control form-control-lg"
+      placeholder="Search Products..."
+      [(ngModel)]="searchText"
+      (keyup)="search()">
+
+  </div>
+
+</div>
+  <div class="row">
+
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 mb-4"
+      *ngFor="let p of pagedProducts">
+
+      <div class="card product-card">
+
+        <img
+          
+          [src]="p.imagePath"
+          class="card-img-top product-img">
+
+        <div class="card-body">
+
+          <h5>{{p.name}}</h5>
+
+          <p>{{p.description}}</p>
+
+          <h4 class="text-success">
+
+            ₹ {{p.price}}
+
+          </h4>
+
+         <div class="d-grid gap-2">
+
+  <button
+   class="btn btn-primary"
+   [routerLink]="['/product',p.id]">
+
+   View Details
+
+  </button>
+
+  <button
+   class="btn btn-success"
+   (click)="addToCart(p)">
+
+   Add To Cart
+
+  </button>
+  <button
+ class="btn btn-outline-danger"
+ (click)="addToWishlist(p)">
+
+ ❤️ Wishlist
+
+</button>
+
+</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+<div class="text-center mt-4">
+
+  <button
+   class="btn btn-outline-primary me-2"
+   [disabled]="page===1"
+   (click)="page=page-1">
+
+   Previous
+
+  </button>
+
+  <button
+   class="btn btn-outline-primary"
+   (click)="page=page+1">
+
+   Next
+
+  </button>
+
+</div>
+</div>

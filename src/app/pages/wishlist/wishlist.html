@@ -1,0 +1,54 @@
+<div class="container py-5">
+
+  <h2 class="mb-4">
+
+    ❤️ My Wishlist
+
+  </h2>
+
+  <div class="row">
+
+    <div
+      class="col-md-3 mb-4"
+      *ngFor="
+      let item of
+      wishlistService.getItems()">
+
+      <div class="card shadow">
+
+        <img
+          [src]="item.imagePath"
+          class="card-img-top"
+          height="200">
+
+        <div class="card-body">
+
+          <h5>
+
+            {{item.name}}
+
+          </h5>
+
+          <h4 class="text-success">
+
+            ₹ {{item.price}}
+
+          </h4>
+
+          <button
+            class="btn btn-danger w-100"
+            (click)="remove(item.id)">
+
+            Remove
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
